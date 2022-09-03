@@ -9,7 +9,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class ConsumerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ConsumerApplication.class, args);
+		var context = SpringApplication.run(ConsumerApplication.class, args);
+		System.exit(SpringApplication.exit(context, () -> 0));
 	}
 
 	@Bean

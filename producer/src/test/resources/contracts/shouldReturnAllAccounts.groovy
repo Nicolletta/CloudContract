@@ -9,7 +9,7 @@ Contract.make {
 	description("should return all accounts")
 	request {
 		url("/accounts")
-		method(HttpMethods.HttpMethod.GET)
+		method GET()
 	}
 	response {
 		status(HttpStatus.OK.value())

@@ -1,5 +1,7 @@
 package com.example.consumer;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -17,4 +19,9 @@ public class AccountClient {
                         .retrieve()
                         .bodyToFlux(Account.class);
     }
+    
+	@PostConstruct
+	public void init() {
+		getAllAccounts().subscribe(System.out::println);
+	}
 }
